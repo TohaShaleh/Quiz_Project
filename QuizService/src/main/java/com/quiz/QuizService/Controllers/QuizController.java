@@ -36,4 +36,9 @@ public class QuizController {
     public Quiz deleteById(@PathVariable Long id) {
         return quizService.deleteById(id);
     }
+
+    @GetMapping("/ByTitle")
+    public List<Quiz> findAllByTitle(@RequestParam String Title) {
+        return quizService.findByTitle(Title);
+    }
 }

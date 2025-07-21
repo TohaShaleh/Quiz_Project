@@ -51,4 +51,11 @@ public class QuizServiceImpl implements QuizServiceInterface{
     }
 
 
+
+    @Override
+    public List<Quiz> findByTitle(String Title) {
+        return quizRepository.findByTitleContainingIgnoreCase(Title);
+    }
+
+
 }

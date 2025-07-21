@@ -10,4 +10,5 @@ public interface QuizServiceInterface {
     List<Quiz> findAll();
     Quiz createQuiz(Quiz quiz);
     Quiz deleteById(Long id);
+    List<Quiz> findByTitle(String Title);
 }
