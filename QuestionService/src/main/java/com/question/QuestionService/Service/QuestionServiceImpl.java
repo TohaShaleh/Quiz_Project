@@ -47,4 +47,11 @@ public class QuestionServiceImpl implements QuestionServiceInterface{
             throw new RuntimeException("Question with id :"+id+" not found");
         }
     }
+
+
+    @Override
+    public List<Question> findByQuizId(Long id) {
+        return questionRepository.findByQuizId(id);
+    }
+
 }

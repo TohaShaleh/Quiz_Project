@@ -26,13 +26,13 @@ public class QuizController {
         return quizService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Quiz create(@RequestBody Quiz quiz)
     {
         return quizService.createQuiz(quiz);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public Quiz deleteById(@PathVariable Long id) {
         return quizService.deleteById(id);
     }

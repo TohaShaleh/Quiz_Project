@@ -10,4 +10,5 @@ public interface QuestionServiceInterface {
     List<Question> findAll();
     Question create(Question question);
     Question deleteById(Long id);
+    List<Question> findByQuizId(Long id);
 }

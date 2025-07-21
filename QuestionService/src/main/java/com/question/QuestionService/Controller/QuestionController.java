@@ -15,7 +15,12 @@ public class QuestionController{
         this.questionService = questionService;
     }
 
-    @PostMapping
+    @GetMapping
+    public List<Question> findAll(){
+        return questionService.findAll();
+    }
+
+    @PostMapping("/add")
     public Question create(@RequestBody Question question){
         return questionService.create(question);
     }
@@ -25,13 +30,18 @@ public class QuestionController{
         return questionService.findById(id);
     }
 
-    @GetMapping
-    public List<Question> findAll(){
-        return questionService.findAll();
-    }
 
-    @DeleteMapping("/{id}")
-    public Question deleteById(@PathVariable Long id){
+    @DeleteMapping("/delete/{id}")
+    public Question deleteById(@PathVariable Long id)
+    {
         return questionService.deleteById(id);
     }
+
+
+    @GetMapping("/quiz/{quizId}")
+    public List<Question> findAllByQuizId(@PathVariable Long quizId){
+        return questionService.findByQuizId(quizId);
+
+    }
+
 }
