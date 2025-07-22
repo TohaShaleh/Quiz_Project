@@ -38,10 +38,17 @@ public class QuestionController{
     }
 
 
+
     @GetMapping("/quiz/{quizId}")
     public List<Question> findAllByQuizId(@PathVariable Long quizId){
         return questionService.findByQuizId(quizId);
 
+    }
+
+
+    @PatchMapping
+    public Question update(@RequestBody Question question){
+        return questionService.update(question);
     }
 
 }

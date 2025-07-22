@@ -54,4 +54,13 @@ public class QuestionServiceImpl implements QuestionServiceInterface{
         return questionRepository.findByQuizId(id);
     }
 
+    @Override
+    public Question update(Question question) {
+
+        Question question1=questionRepository.findById(question.getQuestionId()).orElseThrow(()->new RuntimeException("Question with id :"+question.getQuestionId()+" not found"));
+        question1.setQuestion(question.getQuestion());
+        question1.setQuizId(question.getQuizId());
+        return questionRepository.save(question1);
+    }
+
 }
